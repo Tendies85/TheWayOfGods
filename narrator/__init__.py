@@ -24,17 +24,15 @@ questions = [
 ]
 
 
-def create(name, power):
+def create(stats):
     g = Avatar(
-        name=name,
-        power=power
+        **stats
     )
     return g
 
 
 def run():
     name = input("Enter your name, prophet: ")
-    print("Computing god: ", end="")
 
     power = 0
     potential = len(questions)
@@ -55,6 +53,14 @@ def run():
         #print("#", end="", flush=True)
 
 
-    print("OK !")
 
-    print(create(name, power))
+    print("Computing god: ", end="")
+    print(create(
+        {
+            "name": name,
+            "_food": 25,
+            "_money": 0,
+            "_health": 100,
+            "_follower": power,
+        }
+    ))
